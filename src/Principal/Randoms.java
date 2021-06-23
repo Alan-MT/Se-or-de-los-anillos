@@ -1,31 +1,25 @@
 package src.Principal;
-
-import src.Personaje.Heroes.*;
-import src.Personaje.Bestias.*;
-
 public class Randoms {
     
-    public static int  armadura(int limInf, int limsupe){
+    public static int armadura(int limInf, int limsupe){
     return (int)(Math.random()*(limsupe-limInf)+limInf);
     }
     public static int Ataque(int limsupe){
     return (int)(Math.random()*limsupe);
     }
-}
-class duelo{
-
-    public duelo(Heroe[] hero, Bestias[] bestia){
-        for (int i = 0; i < 2; i++) {
- 
+    public static int tirarDado(int valorMinimo, int valorMaximo, int cantDados, boolean mostrarMensaje){
+        int dado = valorMinimo;
+        int resultado = valorMinimo;
+        for (int i = 1; i <= cantDados; i++) {
+            dado =(int) Math.floor(Math.random()*(valorMaximo-valorMinimo+1)+valorMinimo);
+            if (mostrarMensaje)
+                System.out.println("Se lanzó el "+i+" dado y su resultado fue: "+ dado);
+            if (resultado < dado)
+                resultado = dado;
         }
-
-    }
-    public void CondicionPelea(Heroe hero, Bestias bestia){
-        if ((hero instanceof Elfo)&&(bestia instanceof Orco)) {
-            hero.setArmadura((int)(hero.getArmadura()*10));
-        }if (bestia instanceof Orco) {
-            hero.setArmadura((int)(hero.getArmadura()*0.9));
-        } if((hero instanceof Hobbit)&&(bestia instanceof Trasgo)) {
-            hero.setArmadura((int)(hero.getArmadura()-5));
+        if (cantDados > 1)
+            if (mostrarMensaje)
+                System.out.println("El resultado mayor de los "+cantDados + " lanzados es: "+resultado);
+        return resultado;
     }
 }

@@ -7,8 +7,8 @@ public class Heroe extends Personaje{
     protected static int maximoAtaque = 100, CANTIDAD_DADOS = 2;
     protected static int cantidadInstancias = 0;
 
-    public Heroe(String nombre, int vida) {
-        super(nombre, vida, Heroe.maximoAtaque);
+    public Heroe(String nombre, int vida, int armadura) {
+        super(nombre, vida, Heroe.maximoAtaque, armadura);
         Heroe.cantidadInstancias++;
     }
 
@@ -25,7 +25,7 @@ public class Heroe extends Personaje{
     }
 
     public static void setCANTIDAD_DADOS(int cANTIDAD_DADOS) {
-        CANTIDAD_DADOS = cANTIDAD_DADOS;
+        CANTIDAD_DADOS = cANTIDAD_DADOS; 
     }
 
     public static int getCantidadInstancias() {
@@ -35,6 +35,13 @@ public class Heroe extends Personaje{
     public static void setCantidadInstancias(int cantidadInstancias) {
         Heroe.cantidadInstancias = cantidadInstancias;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: "+nombre+" vida ("+vida+")";
+    }
+  
+    
 
 
     

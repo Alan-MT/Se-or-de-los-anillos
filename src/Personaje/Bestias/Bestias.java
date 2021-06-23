@@ -7,8 +7,8 @@ public class Bestias extends Personaje{
     protected static int maximoAtaque = 90, CANTIDAD_DADOS = 1;
     protected static int cantidadInstancias = 0;
 
-    public Bestias(String nombre, int vida) {
-        super(nombre, vida, Bestias.maximoAtaque);
+    public Bestias(String nombre, int vida, int armadura) {
+        super(nombre, vida, Bestias.maximoAtaque, armadura);
         Bestias.cantidadInstancias++;
     }
 
@@ -34,6 +34,11 @@ public class Bestias extends Personaje{
 
     public static void setCantidadInstancias(int cantidadInstancias) {
         Bestias.cantidadInstancias = cantidadInstancias;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: "+nombre+" vida ("+vida+")";
     }
     
 }
