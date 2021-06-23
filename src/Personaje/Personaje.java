@@ -4,18 +4,15 @@ public class Personaje{
     
     protected String nombre;
     protected int vida, Armadura;
-    protected final int CANTIDAD_DADOS = 0;
 
     public Personaje(){
-        
     }
 
     public Personaje(String nombre, int vida, int armadura) {
         this.nombre = nombre;
         this.vida = vida;
-        Armadura = armadura;
- 
-        
+        Armadura = armadura; 
+     
     }
 
     public String getNombre() {
@@ -42,13 +39,7 @@ public class Personaje{
         Armadura = armadura;
     }
 
-    public int getAtaque() {
-        return ataque;
-    }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
-    }
 
     
  
