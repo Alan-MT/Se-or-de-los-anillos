@@ -1,6 +1,5 @@
 package src.Principal;
 
-import src.Personaje.Personaje;
 import src.Personaje.Bestias.*;
 import src.Personaje.Heroes.*;
 
@@ -28,11 +27,12 @@ public class juego {
         System.out.println("Heroes");
         mostrarbestias(hero);
         duelo();
+        mostrarbestias(hero);
     }
 
     public void duelo() {
 
-        for (int i = 0; i < 120; i++) {
+        for (int i = 0; i < bestia.length; i++) {
             Heroe he = hero[i];
             Bestias ha = bestia[i];
             System.out.println("turno "+(i+1));
