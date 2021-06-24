@@ -57,11 +57,11 @@ public class Personaje{
 
     public void recibirAtaque(Personaje atacante){
         System.out.println(" " + atacante.getNombre() + " atacará a "+ this.getNombre());
-        System.out.println(" "+ atacante.getArmadura()+ "   "+this.Armadura);
+        System.out.println(" "+ atacante.vida+ "   "+this.vida);
 
         int danyoRecibido = this.ObtenerArmadura(atacante) - atacante.obtenerAtaque(this);
         if (danyoRecibido <= 0){
-            this.vida -= danyoRecibido;
+            this.vida += danyoRecibido;
         }
         else{
             danyoRecibido = 0;

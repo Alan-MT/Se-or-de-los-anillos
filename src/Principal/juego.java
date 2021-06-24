@@ -1,5 +1,7 @@
 package src.Principal;
 
+
+
 import java.beans.beancontext.BeanContext;
 
 import src.Personaje.Personaje;
@@ -39,7 +41,7 @@ public class juego {
         int i = 0;
         do {
             
-            System.out.println("turno " + (i + 1));
+            System.out.println("\nturno " + (i + 1));
             this.CondicionPelea(hero[i], bestia[i]);
             hero[i].setAtaque(Randoms.Ataque(100));
             bestia[i].setAtaque(Randoms.Ataque(90));
@@ -49,12 +51,17 @@ public class juego {
 
             if (i < hero.length) {
                 i=i+1;
+            }else if (i < bestia.length) {
+                i=i+1;
             }
             if (i == hero.length) {
                 i=0;
+                
+            }else if(i == bestia.length){
+                i=0;
             }
             ajustarCasilla(hero, bestia);
-        } while (hero[0] == null || bestia[0] != null);
+        } while (hero[0].getVida() > 0 && bestia[0].getVida() > 0);
 
     }
 
@@ -85,7 +92,7 @@ public class juego {
     }
 
     public void ajustarCasilla(Heroe[] hero, Bestias[] beas) {
-        for (int i = 0; i < beas.length; i++) {
+        
             for (int j = 0; j < hero.length; j++) {
                 if (hero[j] == null) {
                     Heroe aux = hero[j];
@@ -96,10 +103,11 @@ public class juego {
                     Bestias aux = beas[j];
                     beas[j] = beas[j + 1];
                     beas[j + 1] = aux;
-                }
+                
             }
 
         }
+
     }
 
 }
