@@ -5,8 +5,8 @@ import src.Personaje.Heroes.*;
 
 public class juego {
     Heroe[] hero = { new Elfo("Caranthir"), new Elfo("Celeborn."), new Elfo("Curufin"), new Elfo("Legolas"),
-            new Hobbit("Bilbo"), new Hobbit("frodo"), new Hobbit("samsagaz"), new Humano("Aragorn"),
-            new Humano("Theoden"), new Humano("Boromir") };
+            new Hobbit("Bilbo"), new Hobbit("frodo"), new Hobbit("samsagaz"), 
+            new Humano("Aragorn"), new Humano("Theoden"), new Humano("Boromir") };
     Bestias[] bestia = { new Orco("Bruzgaf "), new Orco("Gorged"), new Orco("Augdu"), new Orco("Augzush"),
             new Orco("Uthru"), new Trasgo("Dabu"), new Trasgo("Lak´tuk"), new Trasgo("Lo'Gosh"), new Trasgo("Lok'tar"),
             new Trasgo("Swobu") };
@@ -23,11 +23,11 @@ public class juego {
     public void pelea() {
         System.out.println("los ejercitos son");
         System.out.println("Bestias");
-        mostrarbestias(bestia);
+        mostrar(bestia);
         System.out.println("Heroes");
-        mostrarbestias(hero);
+        mostrar(hero);
         duelo();
-        mostrarbestias(hero);
+        mostrar(hero);
     }
 
     public void duelo() {
@@ -35,15 +35,11 @@ public class juego {
         for (int i = 0; i < bestia.length; i++) {
             Heroe he = hero[i];
             Bestias ha = bestia[i];
-            System.out.println("turno "+(i+1));
-            int ele = (int)(Math.random()*2);
-            if (ele == 1) {
+            System.out.println("turno "+(i+1));  
                 this.CondicionPelea(he, ha);
+                Randoms.Ataque(90);
                 hero[i].recibirAtaque(ha);
-            } else {
-                this.CondicionPelea(he, ha);
                 bestia[i].recibirAtaque(he);
-            }
             if (bestia == null) {
                 System.out.println("las bestias han perdidos");
             } else if (hero == null){
@@ -66,7 +62,7 @@ public class juego {
         }
     }
 
-    public void mostrarbestias(Object[] j) {
+    public void mostrar(Object[] j) {
         for (int i = 0; i < j.length; i++) {
             System.out.println(j[i]);
         }
