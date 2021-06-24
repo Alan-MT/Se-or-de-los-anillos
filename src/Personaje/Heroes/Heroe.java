@@ -38,7 +38,7 @@ public class Heroe extends Personaje{
 
     @Override
     public String toString() {
-        return "Nombre: "+nombre+" vida ("+vida+")";
+        return "Nombre: "+nombre+" vida ("+vida+") "+super.toString();
     }
   
     

@@ -57,6 +57,7 @@ public class Personaje{
 
     public void recibirAtaque(Personaje atacante){
         System.out.println(" " + atacante.getNombre() + " atacará a "+ this.getNombre());
+        System.out.println(" "+ atacante.getArmadura()+ "   "+this.Armadura);
 
         int danyoRecibido = this.ObtenerArmadura(atacante) - atacante.obtenerAtaque(this);
         if (danyoRecibido <= 0){
@@ -66,6 +67,11 @@ public class Personaje{
             danyoRecibido = 0;
         }
         System.out.println(" "+atacante.getNombre()+  " ataco a  " + this.getNombre() + " hizo daño: " + danyoRecibido  + " le queda vida: "+this.getVida());
+    }
+
+    @Override
+    public String toString() {
+        return "Armadura=" + Armadura + ", ataque=" + ataque;
     }
 
 

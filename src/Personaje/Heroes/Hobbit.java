@@ -6,5 +6,11 @@ public class Hobbit extends Heroe{
         super(nombre, 200,50);
         
     }
+
+    @Override
+    public String toString() {
+        return "Hobbit "+nombre+" vida("+vida+") "+super.toString();
+    }
+ 
     
 }

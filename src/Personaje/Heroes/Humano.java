@@ -6,4 +6,10 @@ public class Humano extends Heroe{
         super(nombre, 180,65);
     }
 
+    @Override
+    public String toString() {
+        return "Humano "+nombre+" vida("+vida+") "+super.toString();
+    }
+    
+
 }
