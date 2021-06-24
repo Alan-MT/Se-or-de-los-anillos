@@ -63,6 +63,14 @@ public class juego {
             ajustarCasilla(hero, bestia);
         } while (hero[0].getVida() > 0 && bestia[0].getVida() > 0);
 
+        
+        System.out.println("\nLOS GANADORES SON: ");
+        if (hero[0].getVida() > 0) {
+            System.out.println("\n     HEROES\n");
+        } else {
+            System.out.println("\n     BESTIAS\n");
+        }
+
     }
 
     public boolean vivo() {
@@ -92,18 +100,19 @@ public class juego {
     }
 
     public void ajustarCasilla(Heroe[] hero, Bestias[] beas) {
-        
-            for (int j = 0; j < hero.length; j++) {
-                if (hero[j] == null) {
+        for (int i = 0; i < beas.length; i++) {
+            for (int j = 0; j < beas.length-1; j++) {
+                if (hero[j].getVida() <= 0) {
                     Heroe aux = hero[j];
                     hero[j] = hero[j + 1];
                     hero[j + 1] = aux;
                 }
-                if (beas[j] == null) {
+                if (beas[j].getVida() <= 0) {
                     Bestias aux = beas[j];
                     beas[j] = beas[j + 1];
                     beas[j + 1] = aux;
                 
+                }
             }
 
         }
